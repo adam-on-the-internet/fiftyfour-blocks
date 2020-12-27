@@ -1,6 +1,9 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
-import { BlockDeckListComponent } from "./block-deck-list.component";
+import {BlockDeckListComponent} from "./block-deck-list.component";
+import {LoadingComponent} from "../loading/loading.component";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe("BlockDeckListComponent", () => {
   let component: BlockDeckListComponent;
@@ -8,9 +11,10 @@ describe("BlockDeckListComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlockDeckListComponent ]
+      declarations: [BlockDeckListComponent, LoadingComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,4 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {BlockService} from "../../services/block.service";
+import {Block} from "../../models/Block.model";
 
 @Component({
   selector: "app-block-list",
@@ -6,10 +8,30 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./block-list.component.scss"]
 })
 export class BlockListComponent implements OnInit {
+  public blocks: Block[] = null;
 
-  constructor() { }
+  public get ready(): boolean {
+    return this.blocks !== null;
+  }
 
-  ngOnInit() {
+  constructor(
+    private blockService: BlockService,
+  ) {
+  }
+
+  public ngOnInit() {
+    this.loadBlocks();
+  }
+
+  private loadBlocks() {
+    this.blockService.getAllBlocks()
+      .subscribe((res) => this.blocks = res,
+        () => {
+
+        },
+        () => {
+
+        });
   }
 
 }
