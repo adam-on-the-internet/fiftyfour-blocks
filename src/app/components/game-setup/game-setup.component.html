@@ -9,26 +9,42 @@
             <h4>
               1. Select a deck.
             </h4>
-            <ul class="list-group">
-              <ng-container *ngFor="let deck of blockDecks">
-                <li class="list-group-item" (click)="selectDeck(deck)">
-                  {{deck.title}}
-                </li>
-              </ng-container>
-            </ul>
+            <div class="row justify-content-center">
+              <div class="col-md-4 my-3">
+                <ng-container *ngFor="let deck of blockDecks">
+                  <app-card>
+                    <h4>{{deck.title}}</h4>
+                    <p>{{deck.description}}</p>
+                    <i class="fa fa-check" *ngIf="selectedDeck && selectedDeck._id === deck._id"></i>
+                    <button class="btn btn-outline-primary" (click)="selectDeck(deck)"
+                            *ngIf="!selectedDeck || selectedDeck._id !== deck._id">
+                      Select
+                    </button>
+                  </app-card>
+                </ng-container>
+              </div>
+            </div>
           </section>
           <hr>
           <section id="mode-select">
             <h4>
               2. Select a mode.
             </h4>
-            <ul class="list-group">
-              <ng-container *ngFor="let mode of modes">
-                <li class="list-group-item" (click)="selectMode(mode)">
-                  {{mode.title}}
-                </li>
-              </ng-container>
-            </ul>
+            <div class="row justify-content-center">
+              <div class="col-md-4 my-3">
+                <ng-container *ngFor="let mode of modes">
+                  <app-card>
+                    <h4>{{mode.title}}</h4>
+                    <p>{{mode.description}}</p>
+                    <i class="fa fa-check" *ngIf="selectedMode && selectedMode._id === mode._id"></i>
+                    <button class="btn btn-outline-primary" (click)="selectMode(mode)"
+                            *ngIf="!selectedMode || selectedMode._id !== mode._id">
+                      Select
+                    </button>
+                  </app-card>
+                </ng-container>
+              </div>
+            </div>
           </section>
           <hr>
           <section id="start">

@@ -52,6 +52,7 @@ export class GameSetupComponent implements OnInit {
 
   private loadModes() {
     this.modes = MODES;
+    this.selectMode(this.modes[0]);
   }
 
   private loadBlockDecks() {
@@ -61,7 +62,7 @@ export class GameSetupComponent implements OnInit {
 
         },
         () => {
-
+          this.selectDeck(this.blockDecks[0]);
         });
   }
 
