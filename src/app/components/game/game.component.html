@@ -1,0 +1,86 @@
+<app-body>
+  <div class="py-3">
+    <app-card>
+      <ng-container *ngIf="ready; else loading">
+        <h1>{{blockDeck.title}}</h1>
+        <p>
+          Welcome to the game.
+        </p>
+
+        <div class="row">
+          <div class="card card-body bg-dark mb-2 mt-3 col-lg-6 col-sm-10 mx-auto">
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                name="selectedBlockNumber"
+                [(ngModel)]="nextBlockNumber"
+                id="blockNumber"
+                placeholder="Block Number"
+                aria-label="Block Number"
+                aria-describedby="button-addon"
+              />
+              <div class="input-group-append" (click)="selectBlock()">
+                <button
+                  class="btn btn-outline-light"
+                  type="submit"
+                  id="button-addon"
+                >
+                <span>
+                  <i class="fa fa-search mr-2"></i>
+                  Find the Block Rule
+                </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ng-container *ngIf="incorrectSelection">
+          <div class="row">
+            <div class="card card-body bg-dark mb-2 mt-3 col-lg-6 col-sm-10 mx-auto text-light">
+              <div class="alert alert-warning">
+                <h4>
+                  Invalid Number
+                </h4>
+                <p>
+                  Please enter a number between 1 and {{blockDeck.blocks.length}}.
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedBlock">
+          <div class="row">
+            <div class="card card-body bg-dark mb-2 mt-3 col-lg-6 col-sm-10 mx-auto text-light">
+              <h4>
+                <span *ngIf="selectedBlockNumber">
+                  Block {{selectedBlockNumber}}:
+                </span>
+                {{selectedBlock.title}}
+              </h4>
+              <hr>
+              <p>
+                {{selectedBlock.rule}}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+
+        <ul class=" list-group
+            ">
+          <ng-container *ngFor="let block of blockDeck.blocks">
+            <li class="list-group-item">
+              {{block.title}}
+            </li>
+          </ng-container>
+        </ul>
+      </ng-container>
+    </app-card>
+  </div>
+</app-body>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

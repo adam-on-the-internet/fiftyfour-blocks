@@ -1,0 +1,23 @@
+<app-body>
+  <div class="py-3">
+    <app-card>
+      <ng-container *ngIf="ready; else loading">
+        <h1>Game Setup</h1>
+        <p>
+          Select a deck.
+        </p>
+        <ul class="list-group">
+          <ng-container *ngFor="let deck of blockDecks">
+            <li class="list-group-item" (click)="selectDeck(deck)">
+              {{deck.title}}
+            </li>
+          </ng-container>
+        </ul>
+      </ng-container>
+    </app-card>
+  </div>
+</app-body>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

@@ -38,6 +38,14 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.BlockList);
   }
 
+  public goToGameSetup(): void {
+    this.goToRoute(ROUTES_ENUM.GameSetup);
+  }
+
+  public goToGame(deckId: string): void {
+    this.goToRoutes([ROUTES_ENUM.Game, deckId]);
+  }
+
   public goToBlockDeckList(): void {
     this.goToRoute(ROUTES_ENUM.BlockDeckList);
   }

@@ -26,7 +26,9 @@ import {ManageBlockDeckComponent} from "./components/manage-block-deck/manage-bl
 import {BlockDetailComponent} from "./components/block-detail/block-detail.component";
 import {BlockDeckFormComponent} from "./components/block-deck-form/block-deck-form.component";
 import {BlockDeckDetailComponent} from "./components/block-deck-detail/block-deck-detail.component";
-import { ToolComponent } from "./components/tool/tool.component";
+import {ToolComponent} from "./components/tool/tool.component";
+import {GameSetupComponent} from "./components/game-setup/game-setup.component";
+import {GameComponent} from "./components/game/game.component";
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { ToolComponent } from "./components/tool/tool.component";
     BlockDeckFormComponent,
     BlockDeckDetailComponent,
     ToolComponent,
+    GameSetupComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,

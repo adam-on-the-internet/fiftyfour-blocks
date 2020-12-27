@@ -4,6 +4,16 @@
 <app-body>
   <div class="row justify-content-center">
     <div class="col-md-4 my-3">
+      <app-card [title]="'Play'" [icon]="'fa-gamepad'">
+        <p>
+          Play
+        </p>
+        <button class="btn btn-secondary" (click)="goToPlay()">
+          Go
+        </button>
+      </app-card>
+    </div>
+    <div class="col-md-4 my-3">
       <app-card [title]="'Block List'" [icon]="'fa-cube'">
         <p>
           Block List

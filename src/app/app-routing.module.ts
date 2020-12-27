@@ -14,6 +14,8 @@ import {BlockDetailComponent} from "./components/block-detail/block-detail.compo
 import {BlockFormComponent} from "./components/block-form/block-form.component";
 import {BlockDeckFormComponent} from "./components/block-deck-form/block-deck-form.component";
 import {BlockDeckDetailComponent} from "./components/block-deck-detail/block-deck-detail.component";
+import {GameSetupComponent} from "./components/game-setup/game-setup.component";
+import {GameComponent} from "./components/game/game.component";
 
 const routes: Routes = [
   // main
@@ -25,6 +27,8 @@ const routes: Routes = [
   // block
   {path: ROUTES_ENUM.BlockList, component: BlockListComponent},
   {path: ROUTES_ENUM.BlockDeckList, component: BlockDeckListComponent},
+  {path: ROUTES_ENUM.GameSetup, component: GameSetupComponent},
+  {path: ROUTES_ENUM.Game + "/:deckId", component: GameComponent},
   // admin
   {path: ROUTES_ENUM.ManageBlock, component: ManageBlockComponent},
   {path: ROUTES_ENUM.BlockForm, component: BlockFormComponent},

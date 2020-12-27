@@ -31,4 +31,8 @@ export class DashboardComponent implements OnInit {
     this.navHelper.goToBlockList();
   }
 
+  public goToPlay() {
+    this.navHelper.goToGameSetup();
+  }
+
 }
