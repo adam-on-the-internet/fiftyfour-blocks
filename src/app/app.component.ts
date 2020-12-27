@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
     return this.settingsService.showNav;
   }
 
+  public get showTool(): boolean {
+    return this.settingsService.showTool;
+  }
+
   constructor(
     private logService: LogService,
     private settingsService: SettingsService,

@@ -1,12 +1,29 @@
-<div class="container">
+<app-body>
   <div class="row">
     <div class="col-md-12">
       <ng-container *ngIf="ready; else loading">
-        {{blocks | json}}
+        <div class="row">
+          <div class="col-md-12 my-3">
+            <app-card>
+              <h1>Block List</h1>
+              <p>
+                All {{blocks.length}} block(s) available.
+              </p>
+            </app-card>
+          </div>
+          <div class="col-md-6 my-3" *ngFor="let block of blocks">
+            <app-card>
+              <h4>
+                {{block.title}}
+              </h4>
+              {{block.rule}}
+            </app-card>
+          </div>
+        </div>
       </ng-container>
     </div>
   </div>
-</div>
+</app-body>
 
 <ng-template #loading>
   <app-loading></app-loading>

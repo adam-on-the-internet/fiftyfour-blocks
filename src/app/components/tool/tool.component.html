@@ -1,0 +1,51 @@
+<section id="tools">
+  <div class="container">
+    <div class="row mt-3 justify-content-around">
+      <div
+        id="die"
+        class="card mb-3 border-dark"
+        [class.bg-dark]="this.dieBackgroundOn"
+        [class.text-white]="this.dieBackgroundOn"
+        [class.bg-white]="!this.dieBackgroundOn"
+        [class.text-dark]="!this.dieBackgroundOn"
+        style="max-width: 18rem;"
+      >
+        <div class="card-body">
+          <button
+            class="btn"
+            [class.btn-outline-light]="this.dieBackgroundOn"
+            [class.btn-outline-dark]="!this.dieBackgroundOn"
+            (click)="rollDie()"
+          >
+            Roll a Die (6)
+          </button>
+          <h2 class="text-center mt-2">{{ dieResult }}</h2>
+        </div>
+      </div>
+      <div
+        id="coin"
+        class="card mb-3 border-dark"
+        [class.bg-dark]="this.coinBackgroundOn"
+        [class.text-white]="this.coinBackgroundOn"
+        [class.bg-white]="!this.coinBackgroundOn"
+        [class.text-dark]="!this.coinBackgroundOn"
+        style="max-width: 18rem;"
+      >
+        <div class="card-body">
+          <button
+            class="btn"
+            [class.btn-outline-light]="this.coinBackgroundOn"
+            [class.btn-outline-dark]="!this.coinBackgroundOn"
+            (click)="flipCoin()"
+          >
+            Flip a Coin
+          </button>
+          <h2 class="text-center mt-2">
+            <span *ngIf="coinResult === 1">Heads</span>
+            <span *ngIf="coinResult === 2">Tails</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
