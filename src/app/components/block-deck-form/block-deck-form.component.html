@@ -23,6 +23,7 @@
                     </div>
                   </div>
                 </section>
+                <hr>
                 <section id="type">
                   <label for="block-deck-type">
                     Type:
@@ -39,6 +40,7 @@
                     </div>
                   </div>
                 </section>
+                <hr>
                 <section id="description">
                   <label for="block-deck-description">
                     Description:
@@ -51,6 +53,23 @@
                         type="text"
                         name="blockDeckDescription"
                         [(ngModel)]="blockDeck.description"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <hr>
+                <section id="rule">
+                  <label for="block-deck-rule">
+                    Rule (optional):
+                  </label>
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                      <input
+                        id="block-deck-rule"
+                        class="form-control"
+                        type="text"
+                        name="blockDeckRule"
+                        [(ngModel)]="blockDeck.deckRule"
                       />
                     </div>
                   </div>

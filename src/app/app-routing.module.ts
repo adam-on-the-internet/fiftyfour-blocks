@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: ROUTES_ENUM.BlockList, component: BlockListComponent},
   {path: ROUTES_ENUM.BlockDeckList, component: BlockDeckListComponent},
   {path: ROUTES_ENUM.GameSetup, component: GameSetupComponent},
-  {path: ROUTES_ENUM.Game + "/:deckId", component: GameComponent},
+  {path: ROUTES_ENUM.Game + "/deck/:deckId/mode/:modeId", component: GameComponent},
   // admin
   {path: ROUTES_ENUM.ManageBlock, component: ManageBlockComponent},
   {path: ROUTES_ENUM.BlockForm, component: BlockFormComponent},

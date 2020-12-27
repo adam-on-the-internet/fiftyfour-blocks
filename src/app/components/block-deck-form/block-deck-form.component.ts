@@ -158,6 +158,7 @@ export class BlockDeckFormComponent implements OnInit {
       title: null,
       description: null,
       type: "standard",
+      deckRule: null,
       tags: [],
       blocks: [],
       _id: null,

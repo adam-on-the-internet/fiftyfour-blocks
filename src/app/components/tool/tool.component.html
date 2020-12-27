@@ -46,6 +46,29 @@
           </h2>
         </div>
       </div>
+      <div
+        id="one-hundred"
+        class="card mb-3 border-dark"
+        [class.bg-dark]="this.oneHundredBackgroundOn"
+        [class.text-white]="this.oneHundredBackgroundOn"
+        [class.bg-white]="!this.oneHundredBackgroundOn"
+        [class.text-dark]="!this.oneHundredBackgroundOn"
+        style="max-width: 18rem;"
+      >
+        <div class="card-body">
+          <button
+            class="btn"
+            [class.btn-outline-light]="this.oneHundredBackgroundOn"
+            [class.btn-outline-dark]="!this.oneHundredBackgroundOn"
+            (click)="pickOneHundred()"
+          >
+            Pick 1-100
+          </button>
+          <h2 class="text-center mt-2">
+            {{oneHundredResult}}
+          </h2>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -42,8 +42,8 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.GameSetup);
   }
 
-  public goToGame(deckId: string): void {
-    this.goToRoutes([ROUTES_ENUM.Game, deckId]);
+  public goToGame(deckId: string, modeId: string): void {
+    this.goToRoutes([ROUTES_ENUM.Game, "deck", deckId, "mode", modeId]);
   }
 
   public goToBlockDeckList(): void {

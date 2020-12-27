@@ -4,9 +4,9 @@ import { AdminComponent } from "./admin.component";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ActuatorReportComponent } from "../actuator-report/actuator-report.component";
-import { HeaderComponent } from "../header/header.component";
-import { BodyComponent } from "../body/body.component";
-import { LoadingComponent } from "../loading/loading.component";
+import { HeaderComponent } from "../../simple-components/header/header.component";
+import { BodyComponent } from "../../simple-components/body/body.component";
+import { LoadingComponent } from "../../simple-components/loading/loading.component";
 
 describe("AdminComponent", () => {
   let component: AdminComponent;

@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ProfileComponent } from "./profile.component";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
-import { HeaderComponent } from "../header/header.component";
-import { BodyComponent } from "../body/body.component";
+import { HeaderComponent } from "../../simple-components/header/header.component";
+import { BodyComponent } from "../../simple-components/body/body.component";
 
 describe("ProfileComponent", () => {
   let component: ProfileComponent;

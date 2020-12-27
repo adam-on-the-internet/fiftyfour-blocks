@@ -1,10 +1,10 @@
 import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
 import {BlockDetailComponent} from "./block-detail.component";
-import {LoadingComponent} from "../loading/loading.component";
+import {LoadingComponent} from "../../simple-components/loading/loading.component";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
-import {CardComponent} from "../card/card.component";
-import {BodyComponent} from "../body/body.component";
+import {CardComponent} from "../../simple-components/card/card.component";
+import {BodyComponent} from "../../simple-components/body/body.component";
 import {RouterTestingModule} from "@angular/router/testing";
 
 describe("BlockDetailComponent", () => {
