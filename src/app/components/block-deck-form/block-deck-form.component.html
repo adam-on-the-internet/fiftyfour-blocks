@@ -1,70 +1,101 @@
 <ng-container *ngIf="ready; else notReady">
   <app-body>
     <div class="row">
-      <div class="col-md-8 mx-auto my-3 text-center">
+      <div class="col-md-12 mx-auto my-3 text-center">
         <app-card [title]="title">
           <hr>
           <form>
-            <section id="title">
-              <label for="block-deck-title">
-                Block deck title:
-              </label>
-              <div class="row">
-                <div class="col-md-6 mx-auto">
-                  <input
-                    id="block-deck-title"
-                    class="form-control"
-                    type="text"
-                    name="blockDeckTitle"
-                    [(ngModel)]="blockDeck.title"
-                  />
+            <div class="row">
+              <div class="col-md-4">
+                <section id="title">
+                  <label for="block-deck-title">
+                    Title:
+                  </label>
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                      <input
+                        id="block-deck-title"
+                        class="form-control"
+                        type="text"
+                        name="blockDeckTitle"
+                        [(ngModel)]="blockDeck.title"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <section id="type">
+                  <label for="block-deck-type">
+                    Type:
+                  </label>
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                      <input
+                        id="block-deck-type"
+                        class="form-control"
+                        type="text"
+                        name="blockDeckType"
+                        [(ngModel)]="blockDeck.type"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <section id="description">
+                  <label for="block-deck-description">
+                    Description:
+                  </label>
+                  <div class="row">
+                    <div class="col-md-12 mx-auto">
+                      <input
+                        id="block-deck-description"
+                        class="form-control"
+                        type="text"
+                        name="blockDeckDescription"
+                        [(ngModel)]="blockDeck.description"
+                      />
+                    </div>
+                  </div>
+                </section>
+                <hr/>
+                <div class="alert alert-warning" *ngIf="showErrors && !valid">
+                  <p>Please correct the following errors:</p>
+                  <ul>
+                    <li *ngFor="let error of errors">
+                      {{ error }}
+                    </li>
+                  </ul>
                 </div>
+                <button class="btn btn-success" (click)="submit()">
+                  Save
+                </button>
               </div>
-            </section>
-            <section id="type">
-              <label for="block-deck-type">
-                Block deck type:
-              </label>
-              <div class="row">
-                <div class="col-md-6 mx-auto">
-                  <input
-                    id="block-deck-type"
-                    class="form-control"
-                    type="text"
-                    name="blockDeckType"
-                    [(ngModel)]="blockDeck.type"
-                  />
-                </div>
+              <div class="col-md-4">
+                <p>Selected Blocks: ({{blockDeck.blocks.length}})</p>
+                <ul class="list-group">
+                  <ng-container *ngFor="let block of blockDeck.blocks; let i = index">
+                    <li class="list-group-item" (click)="unselectBlock(block)">
+                      <div class="pull-left">
+                        {{i + 1}})
+                      </div>
+                      {{block.title}}
+                      <i class="fa fa-arrow-right pull-right"></i>
+                    </li>
+                  </ng-container>
+                </ul>
               </div>
-            </section>
-            <section id="description">
-              <label for="block-deck-description">
-                Block deck description:
-              </label>
-              <div class="row">
-                <div class="col-md-6 mx-auto">
-                  <input
-                    id="block-deck-description"
-                    class="form-control"
-                    type="text"
-                    name="blockDeckDescription"
-                    [(ngModel)]="blockDeck.description"
-                  />
-                </div>
+              <div class="col-md-4">
+                <p>
+                  Selectable Blocks: ({{selectableBlocks.length}})
+                </p>
+                <ul class="list-group">
+                  <ng-container *ngFor="let block of selectableBlocks">
+                    <li class="list-group-item" (click)="selectBlock(block)">
+                      <i class="fa fa-arrow-left pull-left"></i>
+                      {{block.title}}
+                    </li>
+                  </ng-container>
+                </ul>
               </div>
-            </section>
-            <hr/>
-            <div class="alert alert-warning" *ngIf="showErrors && !valid">
-              <p>Please correct the following errors:</p>
-              <ul>
-                <li *ngFor="let error of errors">
-                  {{ error }}
-                </li>
-              </ul>
             </div>
-            <button class="btn btn-success" (click)="submit()">
-              Save
-            </button>
           </form>
         </app-card>
       </div>

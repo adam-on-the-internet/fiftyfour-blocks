@@ -16,6 +16,21 @@
           </p>
           <hr>
           <p>
+            Blocks:
+          </p>
+          <p *ngIf="blockDeck.blocks.length === 0">
+            No blocks.
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let block of blockDeck.blocks; let i = index">
+              <div class="pull-left">
+                {{i + 1}})
+              </div>
+              {{block.title}}
+            </li>
+          </ul>
+          <hr>
+          <p>
             Tags:
           </p>
           <p *ngIf="blockDeck.tags.length === 0">

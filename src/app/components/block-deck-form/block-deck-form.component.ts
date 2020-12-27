@@ -4,6 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 import {NavHelperService} from "../../services/nav-helper.service";
 import {BlockDeck} from "../../models/BlockDeck.model";
 import {BlockDeckService} from "../../services/block-deck.service";
+import {Block} from "../../models/Block.model";
+import {BlockService} from "../../services/block.service";
 
 @Component({
   selector: "app-block-deck-form",
@@ -12,7 +14,20 @@ import {BlockDeckService} from "../../services/block-deck.service";
 })
 export class BlockDeckFormComponent implements OnInit {
   public blockDeck: BlockDeck = null;
+  public allBlocks: Block[] = null;
   public showErrors = false;
+
+  public get selectedBlockIds(): string[] {
+    return this.blockDeck.blocks.map((block) => {
+      return block._id;
+    });
+  }
+
+  public get selectableBlocks(): Block[] {
+    return this.allBlocks.filter((block) => {
+      return !this.selectedBlockIds.includes(block._id);
+    })
+  }
 
   public get title(): string {
     if (this.editMode) {
@@ -40,7 +55,8 @@ export class BlockDeckFormComponent implements OnInit {
   }
 
   public get ready(): boolean {
-    return BooleanHelper.hasValue(this.blockDeck);
+    return BooleanHelper.hasValue(this.blockDeck) &&
+      BooleanHelper.hasValue(this.allBlocks);
   }
 
   public get editMode(): boolean {
@@ -63,17 +79,30 @@ export class BlockDeckFormComponent implements OnInit {
     private route: ActivatedRoute,
     private navHelper: NavHelperService,
     private blockDeckService: BlockDeckService,
+    private blockService: BlockService,
   ) {
   }
 
   public ngOnInit() {
     this.setupForm();
+    this.loadBlocks();
   }
 
   public submit() {
     this.showErrors = true;
     if (this.valid) {
       this.save();
+    }
+  }
+
+  public selectBlock(block: Block) {
+    this.blockDeck.blocks.push(block);
+  }
+
+  public unselectBlock(block: Block) {
+    const index = this.blockDeck.blocks.indexOf(block);
+    if (index !== -1) {
+      this.blockDeck.blocks.splice(index, 1);
     }
   }
 
@@ -133,6 +162,17 @@ export class BlockDeckFormComponent implements OnInit {
       blocks: [],
       _id: null,
     };
+  }
+
+  private loadBlocks() {
+    this.blockService.getAll()
+      .subscribe((res) => this.allBlocks = res,
+        () => {
+
+        },
+        () => {
+
+        });
   }
 
 }
