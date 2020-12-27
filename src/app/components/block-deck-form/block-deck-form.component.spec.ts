@@ -1,26 +1,27 @@
 import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
-import {ManageBlockDeckComponent} from "./manage-block-deck.component";
+import {BlockDeckFormComponent} from "./block-deck-form.component";
 import {LoadingComponent} from "../loading/loading.component";
 import {CardComponent} from "../card/card.component";
 import {BodyComponent} from "../body/body.component";
-import {RouterTestingModule} from "@angular/router/testing";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {RouterTestingModule} from "@angular/router/testing";
+import {FormsModule} from "@angular/forms";
 
-describe("ManageBlockDeckComponent", () => {
-  let component: ManageBlockDeckComponent;
-  let fixture: ComponentFixture<ManageBlockDeckComponent>;
+describe("BlockDeckFormComponent", () => {
+  let component: BlockDeckFormComponent;
+  let fixture: ComponentFixture<BlockDeckFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ManageBlockDeckComponent, LoadingComponent, CardComponent, BodyComponent, ],
-      imports: [RouterTestingModule, HttpClientTestingModule]
+      declarations: [BlockDeckFormComponent, LoadingComponent, CardComponent, BodyComponent, ],
+      imports: [HttpClientTestingModule, RouterTestingModule, FormsModule, ]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ManageBlockDeckComponent);
+    fixture = TestBed.createComponent(BlockDeckFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

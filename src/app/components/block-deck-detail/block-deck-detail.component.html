@@ -1,0 +1,41 @@
+<ng-container *ngIf="ready; else notReady">
+  <app-body>
+    <div class="row">
+      <div class="col-md-8 mx-auto my-3 text-center">
+        <app-card>
+          <h1>
+            {{ blockDeck.title }}
+          </h1>
+          <hr>
+          <p>
+            Type: {{blockDeck.type}}
+          </p>
+          <hr>
+          <p>
+            Description: {{blockDeck.description}}
+          </p>
+          <hr>
+          <p>
+            Tags:
+          </p>
+          <p *ngIf="blockDeck.tags.length === 0">
+            No tags.
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let tag of blockDeck.tags">
+              {{tag}}
+            </li>
+          </ul>
+          <hr>
+          <p>
+            <small>id: {{ blockDeck._id }}</small>
+          </p>
+        </app-card>
+      </div>
+    </div>
+  </app-body>
+</ng-container>
+
+<ng-template #notReady>
+  <app-loading></app-loading>
+</ng-template>

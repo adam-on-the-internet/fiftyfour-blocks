@@ -10,4 +10,6 @@ export const enum ROUTES_ENUM {
   BlockDetails = "block-details",
   BlockForm = "block-form",
   ManageBlockDeck = "manage-block-deck",
+  BlockDeckDetails = "block-deck-details",
+  BlockDeckForm = "block-deck-form",
 }

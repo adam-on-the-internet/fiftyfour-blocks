@@ -26,7 +26,7 @@ export class BlockDeckListComponent implements OnInit {
   }
 
   private loadBlockDecks() {
-    this.blockDeckService.getAllBlockDecks()
+    this.blockDeckService.getAll()
       .subscribe((res) => this.blockDecks = res,
         () => {
 

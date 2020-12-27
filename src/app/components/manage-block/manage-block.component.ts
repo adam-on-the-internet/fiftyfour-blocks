@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Block} from "../../models/Block.model";
 import {NavHelperService} from "../../services/nav-helper.service";
 import {BlockService} from "../../services/block.service";
@@ -19,14 +19,14 @@ export class ManageBlockComponent implements OnInit {
     return this.blocks.length > 0;
   }
 
-
   constructor(
     private blockService: BlockService,
     private navHelper: NavHelperService,
-  ) { }
+  ) {
+  }
 
   public ngOnInit() {
-    this.loadBlocks();
+    this.loadContent();
   }
 
   public goToDetails(block: Block): void {
@@ -53,18 +53,18 @@ export class ManageBlockComponent implements OnInit {
     this.blockService.delete(block._id)
       .subscribe((res) => response = res,
         (error) => {
-          console.log("delete block failed");
+          console.log("delete failed");
         }, () => {
-          this.loadBlocks();
+          this.loadContent();
         });
   }
 
-  private loadBlocks(): void {
+  private loadContent(): void {
     this.blocks = null;
     this.blockService.getAll()
       .subscribe((res) => this.blocks = res,
         (error) => {
-          console.log("get blocks failed");
+          console.log("load content failed");
         });
   }
 

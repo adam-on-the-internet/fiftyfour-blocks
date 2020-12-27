@@ -1,1 +1,76 @@
-<p>manage-block-deck works!</p>
+<app-body>
+  <div class="row">
+    <div class="col-md-12 my-3 text-center">
+      <app-card [title]="'Manage Block Decks'">
+        <ng-container *ngIf="ready; else loading">
+          <button
+            class="btn btn-success"
+            (click)="create()"
+          >
+            <i class="fa fa-plus"></i>
+            Create
+          </button>
+          <hr>
+          <ng-container *ngIf="!hasContent">
+            <p>None available.</p>
+          </ng-container>
+          <ng-container *ngIf="hasContent">
+            <p>
+              <small>Showing {{ blockDecks.length }} block deck(s)...</small>
+            </p>
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Details</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let blockDeck of blockDecks">
+                    <td>{{ blockDeck.title }}</td>
+                    <td>
+                      <button
+                        class="btn btn-outline-primary"
+                        (click)="goToDetails(blockDeck)"
+                      >
+                        <i class="fa fa-comments"></i>
+                        Details
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-outline-warning"
+                        (click)="edit(blockDeck)"
+                      >
+                        <i class="fa fa-pencil"></i>
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-outline-danger"
+                        (click)="requestDelete(blockDeck)"
+                      >
+                        <i class="fa fa-trash"></i>
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </app-card>
+    </div>
+  </div>
+</app-body>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

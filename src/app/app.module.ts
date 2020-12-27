@@ -24,6 +24,8 @@ import {BlockFormComponent} from "./components/block-form/block-form.component";
 import {ManageBlockComponent} from "./components/manage-block/manage-block.component";
 import {ManageBlockDeckComponent} from "./components/manage-block-deck/manage-block-deck.component";
 import {BlockDetailComponent} from "./components/block-detail/block-detail.component";
+import {BlockDeckFormComponent} from "./components/block-deck-form/block-deck-form.component";
+import {BlockDeckDetailComponent} from "./components/block-deck-detail/block-deck-detail.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import {BlockDetailComponent} from "./components/block-detail/block-detail.compo
     ManageBlockComponent,
     ManageBlockDeckComponent,
     BlockDetailComponent,
+    BlockDeckFormComponent,
+    BlockDeckDetailComponent,
   ],
   imports: [
     BrowserModule,

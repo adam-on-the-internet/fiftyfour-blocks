@@ -48,12 +48,12 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.ManageBlock);
   }
 
-  public goToBlockDetails(blockId: string): void {
-    this.goToRoutes([ROUTES_ENUM.BlockDetails, blockId]);
+  public goToBlockDetails(id: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockDetails, id]);
   }
 
-  public goToBlockEdit(blockId: string): void {
-    this.goToRoutes([ROUTES_ENUM.BlockForm, blockId]);
+  public goToBlockEdit(id: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockForm, id]);
   }
 
   public goToBlockCreate(): void {
@@ -62,6 +62,18 @@ export class NavHelperService {
 
   public goToManageBlockDecks(): void {
     this.goToRoute(ROUTES_ENUM.ManageBlockDeck);
+  }
+
+  public goToBlockDeckDetails(id: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockDeckDetails, id]);
+  }
+
+  public goToBlockDeckEdit(id: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockDeckForm, id]);
+  }
+
+  public goToBlockDeckCreate(): void {
+    this.goToRoute(ROUTES_ENUM.BlockDeckForm);
   }
 
   // GENERAL

@@ -12,6 +12,8 @@ import {ManageBlockComponent} from "./components/manage-block/manage-block.compo
 import {ManageBlockDeckComponent} from "./components/manage-block-deck/manage-block-deck.component";
 import {BlockDetailComponent} from "./components/block-detail/block-detail.component";
 import {BlockFormComponent} from "./components/block-form/block-form.component";
+import {BlockDeckFormComponent} from "./components/block-deck-form/block-deck-form.component";
+import {BlockDeckDetailComponent} from "./components/block-deck-detail/block-deck-detail.component";
 
 const routes: Routes = [
   // main
@@ -29,6 +31,9 @@ const routes: Routes = [
   {path: ROUTES_ENUM.BlockForm + "/:id", component: BlockFormComponent},
   {path: ROUTES_ENUM.BlockDetails + "/:id", component: BlockDetailComponent},
   {path: ROUTES_ENUM.ManageBlockDeck, component: ManageBlockDeckComponent},
+  {path: ROUTES_ENUM.BlockDeckForm, component: BlockDeckFormComponent},
+  {path: ROUTES_ENUM.BlockDeckForm + "/:id", component: BlockDeckFormComponent},
+  {path: ROUTES_ENUM.BlockDeckDetails + "/:id", component: BlockDeckDetailComponent},
   // default
   {path: "**", redirectTo: "dashboard"},
 ];
