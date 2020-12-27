@@ -38,6 +38,14 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.BlockList);
   }
 
+  public goToExtras(): void {
+    this.goToRoute(ROUTES_ENUM.Extras);
+  }
+
+  public goToRules(): void {
+    this.goToRoute(ROUTES_ENUM.Rules);
+  }
+
   public goToGameSetup(): void {
     this.goToRoute(ROUTES_ENUM.GameSetup);
   }

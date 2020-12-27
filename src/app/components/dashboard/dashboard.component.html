@@ -2,61 +2,52 @@
   [title]="'FiftyFour Blocks'"
 ></app-header>
 <app-body>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center text-center">
     <div class="col-md-4 my-3">
-      <app-card [title]="'Play'" [icon]="'fa-gamepad'">
-        <p>
-          Play
-        </p>
-        <button class="btn btn-secondary" (click)="goToPlay()">
-          Go
-        </button>
-      </app-card>
+      <a (click)="goToPlay()">
+        <app-card [useHover]="true">
+          <h1>
+            <i class="fa fa-th"></i>
+            Play
+          </h1>
+        </app-card>
+      </a>
     </div>
     <div class="col-md-4 my-3">
-      <app-card [title]="'Block List'" [icon]="'fa-cube'">
-        <p>
-          Block List
-        </p>
-        <button class="btn btn-secondary" (click)="goToBlockList()">
-          Go
-        </button>
-      </app-card>
+      <a (click)="goToRules()">
+        <app-card [useHover]="true">
+          <h1>
+            <i class="fa fa-book"></i>
+            Rules
+          </h1>
+        </app-card>
+      </a>
     </div>
     <div class="col-md-4 my-3">
-      <app-card [title]="'Block Deck List'" [icon]="'fa-cubes'">
-        <p>
-          Block Deck List
-        </p>
-        <button class="btn btn-secondary" (click)="goToBlockDeckList()">
-          Go
-        </button>
-      </app-card>
+      <a (click)="goToExtras()">
+        <app-card [useHover]="true">
+          <h1>
+            <i class="fa fa-star"></i>
+            Extras
+          </h1>
+        </app-card>
+      </a>
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row text-center justify-content-center">
     <div class="col-md-6 my-3">
-      <app-card [title]="'Donate to Charity'" [icon]="'fa-money'">
-        <p>
-          Like this free website? Pay it forward to a charity I support.
-        </p>
-        <a
-          class="btn btn-secondary"
-          href="https://aoti-app-hub.herokuapp.com/donate"
-          target="_blank"
-        >
-          Donate
-        </a>
-      </app-card>
+      <a href="https://adam-on-the-internet.github.io/app-hub/donate"
+         target="_blank">
+        <app-card [title]="'Donate to Charity'" [icon]="'fa-money'" [useHover]="true">
+        </app-card>
+      </a>
     </div>
     <div class="col-md-6 my-3">
-      <app-card [title]="'More Information'" [icon]="'fa-info-circle'">
-        <p>
-          Just curious about this site? Get more information about this website.
-        </p>
-        <button class="btn btn-secondary" (click)="goToInfo()">Info</button>
-      </app-card>
+      <a (click)="goToInfo()">
+        <app-card [title]="'App Information'" [useHover]="true" [icon]="'fa-info-circle'">
+        </app-card>
+      </a>
     </div>
   </div>
 </app-body>
