@@ -4,15 +4,23 @@
 <app-body>
   <div class="row">
     <div class="col-md-4 my-3">
-      <app-card [title]="'Blocks'" [icon]="'fa-cube'">
+      <app-card [title]="'Block List'" [icon]="'fa-cube'">
         <p>
-          Check out my other projects!
+          Block List
         </p>
-        <a href="https://adam-on-the-internet.github.io/app-hub/dashboard" target="_blank">
-          <button class="btn btn-secondary">
-            Go
-          </button>
-        </a>
+        <button class="btn btn-secondary" (click)="goToBlockList()">
+          Go
+        </button>
+      </app-card>
+    </div>
+    <div class="col-md-4 my-3">
+      <app-card [title]="'Block Deck List'" [icon]="'fa-cubes'">
+        <p>
+          Block Deck List
+        </p>
+        <button class="btn btn-secondary" (click)="goToBlockDeckList()">
+          Go
+        </button>
       </app-card>
     </div>
   </div>

@@ -32,6 +32,16 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.Login);
   }
 
+  // BLOCK
+
+  public goToBlockList(): void {
+    this.goToRoute(ROUTES_ENUM.BlockList);
+  }
+
+  public goToBlockDeckList(): void {
+    this.goToRoute(ROUTES_ENUM.BlockDeckList);
+  }
+
   // GENERAL
 
   private goToRoute(route: string): void {

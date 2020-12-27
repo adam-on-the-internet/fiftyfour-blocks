@@ -23,4 +23,12 @@ export class DashboardComponent implements OnInit {
     this.navHelper.goToInfo();
   }
 
+  public goToBlockDeckList() {
+    this.navHelper.goToBlockDeckList();
+  }
+
+  public goToBlockList() {
+    this.navHelper.goToBlockList();
+  }
+
 }

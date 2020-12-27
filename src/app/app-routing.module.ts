@@ -6,6 +6,8 @@ import {ROUTES_ENUM} from "./constants/routing.constants";
 import {LoginComponent} from "./components/login/login.component";
 import {ProfileComponent} from "./components/profile/profile.component";
 import {AdminComponent} from "./components/admin/admin.component";
+import {BlockListComponent} from "./components/block-list/block-list.component";
+import {BlockDeckListComponent} from "./components/block-deck-list/block-deck-list.component";
 
 const routes: Routes = [
   // main
@@ -14,6 +16,9 @@ const routes: Routes = [
   {path: ROUTES_ENUM.Login, component: LoginComponent},
   {path: ROUTES_ENUM.Profile, component: ProfileComponent},
   {path: ROUTES_ENUM.Admin, component: AdminComponent},
+  // block
+  {path: ROUTES_ENUM.BlockList, component: BlockListComponent},
+  {path: ROUTES_ENUM.BlockDeckList, component: BlockDeckListComponent},
   // default
   {path: "**", redirectTo: "dashboard"},
 ];

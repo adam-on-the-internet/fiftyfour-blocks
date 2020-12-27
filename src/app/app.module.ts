@@ -18,6 +18,8 @@ import {BodyComponent} from "./components/body/body.component";
 import {LoadingComponent} from "./components/loading/loading.component";
 import {CardComponent} from "./components/card/card.component";
 import {BodyAltComponent} from "./components/body-alt/body-alt.component";
+import {BlockListComponent} from "./components/block-list/block-list.component";
+import {BlockDeckListComponent} from "./components/block-deck-list/block-deck-list.component";
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import {BodyAltComponent} from "./components/body-alt/body-alt.component";
     LoadingComponent,
     CardComponent,
     BodyAltComponent,
+    BlockListComponent,
+    BlockDeckListComponent,
   ],
   imports: [
     BrowserModule,

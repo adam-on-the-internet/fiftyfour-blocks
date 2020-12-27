@@ -4,4 +4,6 @@ export const enum ROUTES_ENUM {
   Profile = "profile",
   Admin = "admin",
   Login = "login",
+  BlockList = "block-list",
+  BlockDeckList = "block-deck-list",
 }
