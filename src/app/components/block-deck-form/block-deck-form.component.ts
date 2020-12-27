@@ -95,6 +95,14 @@ export class BlockDeckFormComponent implements OnInit {
     }
   }
 
+  public updateBlockDeckDescription(event) {
+    this.blockDeck.description = event.target.value;
+  }
+
+  public updateBlockDeckRule(event) {
+    this.blockDeck.deckRule = event.target.value;
+  }
+
   public selectBlock(block: Block) {
     this.blockDeck.blocks.push(block);
   }

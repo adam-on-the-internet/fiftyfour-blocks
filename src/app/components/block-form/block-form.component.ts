@@ -63,6 +63,10 @@ export class BlockFormComponent implements OnInit {
     this.setupForm();
   }
 
+  public updateBlockRule(event) {
+    this.block.rule = event.target.value;
+  }
+
   public submit() {
     this.showErrors = true;
     if (this.valid) {

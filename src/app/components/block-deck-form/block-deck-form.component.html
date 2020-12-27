@@ -47,13 +47,13 @@
                   </label>
                   <div class="row">
                     <div class="col-md-12 mx-auto">
-                      <input
-                        id="block-deck-description"
-                        class="form-control"
-                        type="text"
-                        name="blockDeckDescription"
-                        [(ngModel)]="blockDeck.description"
-                      />
+                                                      <textarea
+                                                        id="block-deck-description"
+                                                        rows="5"
+                                                        cols="30"
+                                                        (change)="updateBlockDeckDescription($event)"
+                                                      >{{ blockDeck.description }}</textarea
+                                                      >
                     </div>
                   </div>
                 </section>
@@ -64,13 +64,13 @@
                   </label>
                   <div class="row">
                     <div class="col-md-12 mx-auto">
-                      <input
-                        id="block-deck-rule"
-                        class="form-control"
-                        type="text"
-                        name="blockDeckRule"
-                        [(ngModel)]="blockDeck.deckRule"
-                      />
+                                                                            <textarea
+                                                                              id="block-deck-rule"
+                                                                              rows="5"
+                                                                              cols="30"
+                                                                              (change)="updateBlockDeckRule($event)"
+                                                                            >{{ blockDeck.deckRule }}</textarea
+                                                                            >
                     </div>
                   </div>
                 </section>
@@ -83,7 +83,7 @@
                     </li>
                   </ul>
                 </div>
-                <button class="btn btn-success" (click)="submit()">
+                <button class="btn btn-success btn-block" (click)="submit()">
                   Save
                 </button>
               </div>
@@ -91,7 +91,7 @@
                 <p>Selected Blocks: ({{blockDeck.blocks.length}})</p>
                 <ul class="list-group">
                   <ng-container *ngFor="let block of blockDeck.blocks; let i = index">
-                    <li class="list-group-item" (click)="unselectBlock(block)">
+                    <li class="list-group-item" (click)="unselectBlock(block)" [attr.title]="block.rule">
                       <div class="pull-left">
                         {{i + 1}})
                       </div>
@@ -107,7 +107,7 @@
                 </p>
                 <ul class="list-group">
                   <ng-container *ngFor="let block of selectableBlocks">
-                    <li class="list-group-item" (click)="selectBlock(block)">
+                    <li class="list-group-item" (click)="selectBlock(block)" [attr.title]="block.rule">
                       <i class="fa fa-arrow-left pull-left"></i>
                       {{block.title}}
                     </li>
