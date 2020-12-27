@@ -26,7 +26,7 @@ export class BlockDeckFormComponent implements OnInit {
   public get selectableBlocks(): Block[] {
     return this.allBlocks.filter((block) => {
       return !this.selectedBlockIds.includes(block._id);
-    })
+    });
   }
 
   public get title(): string {
