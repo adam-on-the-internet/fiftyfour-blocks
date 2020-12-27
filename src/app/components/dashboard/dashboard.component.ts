@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 import {NavHelperService} from "src/app/services/nav-helper.service";
 import {SettingsService} from "../../services/settings.service";
 
@@ -7,8 +7,7 @@ import {SettingsService} from "../../services/settings.service";
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.css"]
 })
-export class DashboardComponent implements OnInit {
-
+export class DashboardComponent {
   constructor(
     private navHelper: NavHelperService,
     private settings: SettingsService,
@@ -16,22 +15,15 @@ export class DashboardComponent implements OnInit {
     this.settings.showNav = true;
   }
 
-  public ngOnInit() {
-  }
-
   public goToInfo() {
     this.navHelper.goToInfo();
-  }
-
-  public goToRules() {
-    this.navHelper.goToRules();
   }
 
   public goToExtras() {
     this.navHelper.goToExtras();
   }
 
-  public goToPlay() {
+  public goToCustom() {
     this.navHelper.goToGameSetup();
   }
 

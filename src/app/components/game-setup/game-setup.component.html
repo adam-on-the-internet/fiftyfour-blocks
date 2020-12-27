@@ -10,8 +10,8 @@
               1. Select a deck.
             </h4>
             <div class="row justify-content-center">
-              <div class="col-md-4 my-3">
-                <ng-container *ngFor="let deck of blockDecks">
+              <ng-container *ngFor="let deck of blockDecks">
+                <div class="col-md-4 my-3">
                   <app-card>
                     <h4>{{deck.title}}</h4>
                     <p>{{deck.description}}</p>
@@ -21,8 +21,8 @@
                       Select
                     </button>
                   </app-card>
-                </ng-container>
-              </div>
+                </div>
+              </ng-container>
             </div>
           </section>
           <hr>
@@ -31,8 +31,8 @@
               2. Select a mode.
             </h4>
             <div class="row justify-content-center">
-              <div class="col-md-4 my-3">
-                <ng-container *ngFor="let mode of modes">
+              <ng-container *ngFor="let mode of modes">
+                <div class="col-md-4 my-3">
                   <app-card>
                     <h4>{{mode.title}}</h4>
                     <p>{{mode.description}}</p>
@@ -42,8 +42,8 @@
                       Select
                     </button>
                   </app-card>
-                </ng-container>
-              </div>
+                </div>
+              </ng-container>
             </div>
           </section>
           <hr>
@@ -68,7 +68,7 @@
                   </strong>
                 </p>
                 <p>
-                  <button class="btn btn-primary btn-block btn-large" (click)="startGame()" [disabled]="!canStartGame">
+                  <button class="btn btn-primary btn-block btn-lg" (click)="startGame()" [disabled]="!canStartGame">
                     Start Game
                   </button>
                 </p>

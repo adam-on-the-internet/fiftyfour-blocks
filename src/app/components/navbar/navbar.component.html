@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-brown">
-  <a class="navbar-brand" (click)="goToDashboard()" id="app-title">
+  <a class="navbar-brand" (click)="goToDashboard()">
     <i class="fa fa-th"></i>
     <span id="app-title">
       FiftyFour Blocks
@@ -18,6 +18,30 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active" (click)="goToDashboard()">
+          <i class="fa fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" (click)="goToSetup()">
+          <i class="fa fa-th"></i>
+          Start
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" (click)="goToExtras()">
+          <i class="fa fa-star"></i>
+          Extras
+        </a>
+      </li>
+      <li class="nav-item">
+        <app-modal-trigger-button [boxId]="'rules'" [alt]="true">
+          <i class="fa fa-book"></i>
+          Rules
+        </app-modal-trigger-button>
+      </li>
       <ng-container *ngIf="isLoggedIn">
         <li class="nav-item">
           <a class="nav-link" (click)="goToProfile()">Your profile</a>
@@ -32,3 +56,7 @@
     </ul>
   </div>
 </nav>
+
+<app-modal-box-basic [boxId]="'rules'" [title]="'Rules'">
+  <app-rule-details></app-rule-details>
+</app-modal-box-basic>

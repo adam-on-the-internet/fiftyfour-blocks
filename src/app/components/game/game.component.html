@@ -7,8 +7,13 @@
             <h2>{{blockDeck.title}} - {{mode.title}}</h2>
             <div class="row justify-content-center">
               <div class="col-md-2">
-                <app-modal-trigger-button [boxId]="'rule-basics'">
-                  Rule Basics
+                <app-modal-trigger-button [boxId]="'deck-details'">
+                  Deck Details
+                </app-modal-trigger-button>
+              </div>
+              <div class="col-md-2">
+                <app-modal-trigger-button [boxId]="'mode-details'">
+                  Mode Details
                 </app-modal-trigger-button>
               </div>
               <div class="col-md-2">
@@ -18,26 +23,26 @@
               </div>
             </div>
           </section>
-          <hr>
           <section id="rules">
-            <h4>
-              Rules
-            </h4>
-            <ul class="list-group">
-              <li class="list-group-item">
-                Standard Penalty: {{mode.standardPenalty}}
-              </li>
-              <li class="list-group-item">
-                Tower Fall Penalty:
-                {{mode.towerFallPenalty}}
-              </li>
-              <li class="list-group-item" *ngIf="blockDeck.deckRule">
-                Deck Rule: {{blockDeck.deckRule}}
-              </li>
-              <li class="list-group-item" *ngFor="let extraRule of mode.extraRules">
-                {{extraRule}}
-              </li>
-            </ul>
+            <div class="row mt-3">
+              <div class="col-md-8 mx-auto">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    Standard Penalty: {{mode.standardPenalty}}
+                  </li>
+                  <li class="list-group-item">
+                    Tower Fall Penalty:
+                    {{mode.towerFallPenalty}}
+                  </li>
+                  <li class="list-group-item" *ngIf="blockDeck.deckRule">
+                    Deck Rule: {{blockDeck.deckRule}}
+                  </li>
+                  <li class="list-group-item" *ngFor="let extraRule of mode.extraRules">
+                    {{extraRule}}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </section>
           <hr>
           <section id="block-select">
@@ -107,19 +112,35 @@
           </section>
 
           <section id="modals">
-            <app-modal-box-basic [boxId]="'rule-basics'" [title]="'Rule Basics'">
+            <app-modal-box-basic [boxId]="'deck-details'" [title]="'Deck Details'">
+              <h4>Deck: {{blockDeck.title}}</h4>
               <p>
-                Take the STANDARD PENALTY when you want to skip a block rule, when you fail to complete a block rule,
-                or when a block gives you any number of penalties.
+                {{blockDeck.description}}
               </p>
-              <p>
-                Take the TOWER FALL PENALTY when you cause the tower to fall over, whether it is your turn or not.
+              <p *ngIf="blockDeck.deckRule">
+                Deck Rule: {{blockDeck.deckRule}}
               </p>
+            </app-modal-box-basic>
+            <app-modal-box-basic [boxId]="'mode-details'" [title]="'Mode Details'">
+              <h4>Mode: {{mode.title}}</h4>
+              <p>{{mode.description}}</p>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  Standard Penalty: {{mode.standardPenalty}}
+                </li>
+                <li class="list-group-item">
+                  Tower Fall Penalty:
+                  {{mode.towerFallPenalty}}
+                </li>
+                <li class="list-group-item" *ngFor="let extraRule of mode.extraRules">
+                  {{extraRule}}
+                </li>
+              </ul>
             </app-modal-box-basic>
             <app-modal-box-basic [boxId]="'block-list'" [title]="'Block List'">
               <ul class=" list-group">
                 <ng-container *ngFor="let block of blockDeck.blocks; let i = index">
-                  <li class="list-group-item">
+                  <li class="list-group-item" [attr.title]="block.rule">
                     <span class="pull-left">{{i + 1}})</span>
                     {{block.title}}
                   </li>

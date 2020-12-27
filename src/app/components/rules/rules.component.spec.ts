@@ -3,6 +3,7 @@ import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 import {RulesComponent} from "./rules.component";
 import {BodyComponent} from "../../simple-components/body/body.component";
 import {CardComponent} from "../../simple-components/card/card.component";
+import {RuleDetailsComponent} from "../rule-details/rule-details.component";
 
 describe("RulesComponent", () => {
   let component: RulesComponent;
@@ -10,7 +11,7 @@ describe("RulesComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [RulesComponent, BodyComponent, CardComponent]
+      declarations: [RulesComponent, BodyComponent, CardComponent, RuleDetailsComponent]
     })
       .compileComponents();
   }));

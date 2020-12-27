@@ -3,6 +3,11 @@
     <div class="col-md-6 my-3">
       <app-card [title]="'Extras'">
         <p>
+          <button class="btn btn-primary btn-block" (click)="goToRules()">
+            Rules
+          </button>
+        </p>
+        <p>
           <button class="btn btn-primary btn-block" (click)="goToBlockList()">
             Block List
           </button>
@@ -10,6 +15,20 @@
         <p>
           <button class="btn btn-primary btn-block" (click)="goToBlockDeckList()">
             Block Deck List
+          </button>
+        </p>
+        <hr>
+        <p>
+          <a href="https://adam-on-the-internet.github.io/app-hub/donate"
+             target="_blank">
+            <button class="btn btn-primary btn-block">
+              Donate
+            </button>
+          </a>
+        </p>
+        <p>
+          <button class="btn btn-primary btn-block" (click)="goToAppInfo()">
+            App Information
           </button>
         </p>
       </app-card>

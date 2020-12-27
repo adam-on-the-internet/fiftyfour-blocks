@@ -33,6 +33,14 @@ export class NavbarComponent {
     this.navHelper.goToDashboard();
   }
 
+  public goToExtras(): void {
+    this.navHelper.goToExtras();
+  }
+
+  public goToSetup(): void {
+    this.navHelper.goToGameSetup();
+  }
+
   public goToProfile(): void {
     this.navHelper.goToProfile();
   }

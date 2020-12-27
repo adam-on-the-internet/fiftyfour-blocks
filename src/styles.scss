@@ -9,3 +9,9 @@ img {
   max-width: 300px;
   max-height: 300px;
 }
+
+// https://www.pexels.com/photo/set-of-wooden-blocks-for-jenga-game-4473494/
+.bg-off {
+  background-image: url("./assets/blocks.jpg");
+  background-size: cover;
+}

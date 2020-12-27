@@ -33,6 +33,7 @@ import {ModalBoxBasicComponent} from "./simple-components/modal/modal-box-basic/
 import {ModalTriggerButtonComponent} from "./simple-components/modal/modal-trigger-button/modal-trigger-button.component";
 import { RulesComponent } from "./components/rules/rules.component";
 import { ExtrasComponent } from "./components/extras/extras.component";
+import { RuleDetailsComponent } from "./components/rule-details/rule-details.component";
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { ExtrasComponent } from "./components/extras/extras.component";
     ModalTriggerButtonComponent,
     RulesComponent,
     ExtrasComponent,
+    RuleDetailsComponent,
   ],
   imports: [
     BrowserModule,

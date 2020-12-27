@@ -17,8 +17,16 @@ export class ExtrasComponent {
     this.navHelper.goToBlockDeckList();
   }
 
+  public goToAppInfo() {
+    this.navHelper.goToInfo();
+  }
+
   public goToBlockList() {
     this.navHelper.goToBlockList();
+  }
+
+  public goToRules() {
+    this.navHelper.goToRules();
   }
 
 }
