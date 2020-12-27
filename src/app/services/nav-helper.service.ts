@@ -58,6 +58,10 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.BlockDeckList);
   }
 
+  public goToModeList(): void {
+    this.goToRoute(ROUTES_ENUM.ModeList);
+  }
+
   // ADMIN
 
   public goToManageBlocks(): void {

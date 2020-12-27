@@ -1,0 +1,30 @@
+<app-body>
+  <div class="row">
+    <div class="col-md-12">
+      <ng-container *ngIf="ready; else loading">
+        <div class="row">
+          <div class="col-md-12 my-3">
+            <app-card>
+              <h1>Mode List</h1>
+              <p>
+                All {{modes.length}} mode(s) available.
+              </p>
+            </app-card>
+          </div>
+          <div class="col-md-6 my-3" *ngFor="let mode of modes">
+            <app-card>
+              <h4>
+                {{mode.title}}
+              </h4>
+              {{mode.description}}
+            </app-card>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</app-body>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

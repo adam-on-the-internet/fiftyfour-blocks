@@ -31,9 +31,10 @@ import {GameSetupComponent} from "./components/game-setup/game-setup.component";
 import {GameComponent} from "./components/game/game.component";
 import {ModalBoxBasicComponent} from "./simple-components/modal/modal-box-basic/modal-box-basic.component";
 import {ModalTriggerButtonComponent} from "./simple-components/modal/modal-trigger-button/modal-trigger-button.component";
-import { RulesComponent } from "./components/rules/rules.component";
-import { ExtrasComponent } from "./components/extras/extras.component";
-import { RuleDetailsComponent } from "./components/rule-details/rule-details.component";
+import {RulesComponent} from "./components/rules/rules.component";
+import {ExtrasComponent} from "./components/extras/extras.component";
+import {RuleDetailsComponent} from "./components/rule-details/rule-details.component";
+import {ModeListComponent} from "./components/mode-list/mode-list.component";
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { RuleDetailsComponent } from "./components/rule-details/rule-details.com
     RulesComponent,
     ExtrasComponent,
     RuleDetailsComponent,
+    ModeListComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ import {GameSetupComponent} from "./components/game-setup/game-setup.component";
 import {GameComponent} from "./components/game/game.component";
 import {ExtrasComponent} from "./components/extras/extras.component";
 import {RulesComponent} from "./components/rules/rules.component";
+import {ModeListComponent} from "./components/mode-list/mode-list.component";
 
 const routes: Routes = [
   // main
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: ROUTES_ENUM.Rules, component: RulesComponent},
   {path: ROUTES_ENUM.BlockList, component: BlockListComponent},
   {path: ROUTES_ENUM.BlockDeckList, component: BlockDeckListComponent},
+  {path: ROUTES_ENUM.ModeList, component: ModeListComponent},
   {path: ROUTES_ENUM.GameSetup, component: GameSetupComponent},
   {path: ROUTES_ENUM.Game + "/deck/:deckId/mode/:modeId", component: GameComponent},
   // admin

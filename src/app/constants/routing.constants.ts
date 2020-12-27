@@ -5,6 +5,7 @@ export const enum ROUTES_ENUM {
   Admin = "admin",
   Login = "login",
   BlockList = "block-list",
+  ModeList = "mode-list",
   GameSetup = "game-setup",
   Game = "game",
   Rules = "rules",
