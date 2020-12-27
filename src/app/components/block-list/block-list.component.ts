@@ -24,7 +24,7 @@ export class BlockListComponent implements OnInit {
   }
 
   private loadBlocks() {
-    this.blockService.getAllBlocks()
+    this.blockService.getAll()
       .subscribe((res) => this.blocks = res,
         () => {
 

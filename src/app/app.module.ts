@@ -20,6 +20,10 @@ import {CardComponent} from "./components/card/card.component";
 import {BodyAltComponent} from "./components/body-alt/body-alt.component";
 import {BlockListComponent} from "./components/block-list/block-list.component";
 import {BlockDeckListComponent} from "./components/block-deck-list/block-deck-list.component";
+import {BlockFormComponent} from "./components/block-form/block-form.component";
+import {ManageBlockComponent} from "./components/manage-block/manage-block.component";
+import {ManageBlockDeckComponent} from "./components/manage-block-deck/manage-block-deck.component";
+import {BlockDetailComponent} from "./components/block-detail/block-detail.component";
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import {BlockDeckListComponent} from "./components/block-deck-list/block-deck-li
     BodyAltComponent,
     BlockListComponent,
     BlockDeckListComponent,
+    BlockFormComponent,
+    ManageBlockComponent,
+    ManageBlockDeckComponent,
+    BlockDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,6 +42,28 @@ export class NavHelperService {
     this.goToRoute(ROUTES_ENUM.BlockDeckList);
   }
 
+  // ADMIN
+
+  public goToManageBlocks(): void {
+    this.goToRoute(ROUTES_ENUM.ManageBlock);
+  }
+
+  public goToBlockDetails(blockId: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockDetails, blockId]);
+  }
+
+  public goToBlockEdit(blockId: string): void {
+    this.goToRoutes([ROUTES_ENUM.BlockForm, blockId]);
+  }
+
+  public goToBlockCreate(): void {
+    this.goToRoute(ROUTES_ENUM.BlockForm);
+  }
+
+  public goToManageBlockDecks(): void {
+    this.goToRoute(ROUTES_ENUM.ManageBlockDeck);
+  }
+
   // GENERAL
 
   private goToRoute(route: string): void {

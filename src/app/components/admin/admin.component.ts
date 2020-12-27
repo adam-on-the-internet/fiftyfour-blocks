@@ -1,6 +1,5 @@
 import {Component} from "@angular/core";
 import {NavHelperService} from "src/app/services/nav-helper.service";
-import {ServiceUrl} from "src/app/constants/rest.constants";
 
 @Component({
   selector: "app-admin",
@@ -8,11 +7,17 @@ import {ServiceUrl} from "src/app/constants/rest.constants";
   styleUrls: ["./admin.component.css"]
 })
 export class AdminComponent {
-  public basicExpressServiceUrl = ServiceUrl.BasicExpress;
-
   constructor(
     private navHelper: NavHelperService,
   ) {
+  }
+
+  public manageBlocks() {
+    this.navHelper.goToManageBlocks();
+  }
+
+  public manageBlockDecks() {
+    this.navHelper.goToManageBlockDecks();
   }
 
 }

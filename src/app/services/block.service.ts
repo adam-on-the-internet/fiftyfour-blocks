@@ -17,11 +17,45 @@ export class BlockService {
   ) {
   }
 
-  public getAllBlocks(): Observable<Block[]> {
+  public getAll(): Observable<Block[]> {
     const url = RestUrlBuilder.buildRestUrl({
       service: ServiceUrl.BasicExpress,
       controller,
     });
     return this.http.get(url, CookieHelper.authHeaders) as Observable<Block[]>;
+  }
+
+  public getSingle(blockId: string): Observable<Block> {
+    const url = RestUrlBuilder.buildRestUrl({
+      service: ServiceUrl.BasicExpress,
+      controller,
+      params: blockId
+    });
+    return this.http.get(url, CookieHelper.authHeaders) as Observable<Block>;
+  }
+
+  public update(block: Block): Observable<any> {
+    const url = RestUrlBuilder.buildRestUrl({
+      service: ServiceUrl.BasicExpress,
+      controller
+    });
+    return this.http.put(url, block, CookieHelper.authHeaders) as Observable<any>;
+  }
+
+  public create(block: Block): Observable<any> {
+    const url = RestUrlBuilder.buildRestUrl({
+      service: ServiceUrl.BasicExpress,
+      controller
+    });
+    return this.http.post(url, block, CookieHelper.authHeaders) as Observable<any>;
+  }
+
+  public delete(id: string): Observable<any> {
+    const url = RestUrlBuilder.buildRestUrl({
+      service: ServiceUrl.BasicExpress,
+      controller,
+      params: id,
+    });
+    return this.http.delete(url, CookieHelper.authHeaders) as Observable<any>;
   }
 }

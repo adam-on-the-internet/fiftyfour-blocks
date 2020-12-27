@@ -8,6 +8,10 @@ import {ProfileComponent} from "./components/profile/profile.component";
 import {AdminComponent} from "./components/admin/admin.component";
 import {BlockListComponent} from "./components/block-list/block-list.component";
 import {BlockDeckListComponent} from "./components/block-deck-list/block-deck-list.component";
+import {ManageBlockComponent} from "./components/manage-block/manage-block.component";
+import {ManageBlockDeckComponent} from "./components/manage-block-deck/manage-block-deck.component";
+import {BlockDetailComponent} from "./components/block-detail/block-detail.component";
+import {BlockFormComponent} from "./components/block-form/block-form.component";
 
 const routes: Routes = [
   // main
@@ -19,6 +23,12 @@ const routes: Routes = [
   // block
   {path: ROUTES_ENUM.BlockList, component: BlockListComponent},
   {path: ROUTES_ENUM.BlockDeckList, component: BlockDeckListComponent},
+  // admin
+  {path: ROUTES_ENUM.ManageBlock, component: ManageBlockComponent},
+  {path: ROUTES_ENUM.BlockForm, component: BlockFormComponent},
+  {path: ROUTES_ENUM.BlockForm + "/:id", component: BlockFormComponent},
+  {path: ROUTES_ENUM.BlockDetails + "/:id", component: BlockDetailComponent},
+  {path: ROUTES_ENUM.ManageBlockDeck, component: ManageBlockDeckComponent},
   // default
   {path: "**", redirectTo: "dashboard"},
 ];
